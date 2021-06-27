@@ -1,0 +1,69 @@
+[System]
+Name='Kerim_SENOL'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Enerji'
+Range=[0 1]
+NumMFs=5
+MF1='Ç_D':'trimf',[-0.25 0 0.1928]
+MF2='D':'trimf',[0 0.24 0.5]
+MF3='O':'trimf',[0.2 0.4675 0.68]
+MF4='Y':'trimf',[0.509 0.739 1]
+MF5='Ç_Y':'trimf',[0.8 0.81 7]
+
+[Input2]
+Name='Trafik'
+Range=[0 10]
+NumMFs=5
+MF1='Çok_D':'trimf',[-2.5 0 0]
+MF2='Düşük':'trimf',[0 1.555 2.09]
+MF3='Orta':'trimf',[2.09 3.5 5]
+MF4='Yüksek':'trimf',[5 6.7 8]
+MF5='Ç_Yüksek':'trimf',[8 9 10]
+
+[Output1]
+Name='Maliyet'
+Range=[0 1]
+NumMFs=5
+MF1='Çok_Az':'trimf',[-0.25 0 0.2]
+MF2='Az':'trimf',[0 0.309 0.5]
+MF3='Orta':'trimf',[0.1947 0.4999 0.709]
+MF4='Yüksek':'trimf',[0.5 0.7988 1]
+MF5='Çok_Y':'trimf',[0.75 0.899 15]
+
+[Rules]
+1 1, 2 (1) : 1
+2 1, 3 (1) : 1
+3 1, 4 (1) : 1
+4 1, 5 (1) : 1
+5 1, 5 (1) : 1
+1 2, 1 (1) : 1
+2 2, 3 (1) : 1
+3 2, 3 (1) : 1
+4 2, 4 (1) : 1
+5 2, 5 (1) : 1
+1 3, 1 (1) : 1
+2 3, 2 (1) : 1
+3 3, 3 (1) : 1
+4 3, 4 (1) : 1
+5 3, 5 (1) : 1
+1 4, 1 (1) : 1
+2 4, 2 (1) : 1
+3 4, 2 (1) : 1
+4 4, 3 (1) : 1
+5 4, 4 (1) : 1
+1 5, 1 (1) : 1
+2 5, 1 (1) : 1
+3 5, 2 (1) : 1
+4 5, 3 (1) : 1
+5 5, 4 (1) : 1
